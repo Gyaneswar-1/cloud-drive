@@ -14,7 +14,7 @@ indexRouter.get("/home", auth, async (req, res) => {
     console.log(userFiles);
     res.render("home.ejs", {
       files: userFiles,
-      user:req.user.username
+      user: req.user.username,
     });
   } catch (error) {
     console.error(error);
@@ -36,7 +36,7 @@ indexRouter.post("/upload", auth, upload.single("file"), async (req, res) => {
       user: req.user.userId,
     });
 
-    res.json(newFile);
+    res.redirect("/home");
   } catch (err) {
     console.log(err);
     res.status(500).json({
@@ -46,21 +46,4 @@ indexRouter.post("/upload", auth, upload.single("file"), async (req, res) => {
   }
 });
 
-
 export default indexRouter;
-
-// indexRouter.get("/download/:path", auth, async (req, res) => {
-//   const loggedInUserId = req.user.userId;
-//   const path = req.params.path;
-
-//   const files = await file.findOne({
-//     user:loggedInUserId,
-//     path:path
-//   }) 
-  
-//   if(!file){
-//     return res.status(401).json({
-//       message:"NOOOOOOOOOOOOOOOOOooooo"
-//     })
-//   }
-// });

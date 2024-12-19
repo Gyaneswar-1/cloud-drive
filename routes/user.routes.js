@@ -37,7 +37,7 @@ userRouter.post(
       username: username,
       password: hashPassword,
     });
-    res.json({ newuser: newUser });
+    res.redirect("/user/login");
   }
 );
 
@@ -87,7 +87,7 @@ userRouter.post(
       process.env.JWT_SECRET
     );
     res.cookie("token", token);
-    res.send("Logged in");
+    res.redirect("/home");
   }
 );
 
