@@ -21,7 +21,7 @@ Before you begin, ensure that you have the following installed:
 
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/drive-website.git
+   git clone https://github.com/Gyaneswar-1/cloud-drive.git
    ```
 
 2. Navigate to the project directory:
